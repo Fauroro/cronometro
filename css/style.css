@@ -8,7 +8,7 @@ a {
   text-decoration: none;
 }
 
-.container {
+div.container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -50,11 +50,11 @@ button.reinicio {
   background-color: rgb(255, 56, 56);
 }
 
-#boton-inicio.inicio,
-#boton-inicio.inicio i{
+/* Estilo aplicado al boton si el cronometro esta pausado */
+#boton-inicio.inicio {
   background-color: greenyellow;
 }
-#boton-inicio.pausa,
-#boton-inicio.pausa i{
+/* Estilo aplicado al boton si el cronometro esta activo */
+#boton-inicio.pausa {
   background-color: yellow;
 }
