@@ -1,4 +1,3 @@
-debugger
 const botonInicio = document.getElementById('boton-inicio');
 const botonReinicio = document.getElementById('boton-reinicio');
 const cronometro = document.getElementById('cronometro')
@@ -9,7 +8,6 @@ let tiempoTranscurrido;
 let estado = 'pausa';
 
 const cronometroAndando = () =>{
-  debugger
   segundos++;
   if (segundos===60) {
     segundos = 0;
@@ -28,7 +26,6 @@ const cronometroAndando = () =>{
   cronometro.innerText = `${formatoHoras}:${formatoMinutos}:${formatoSegundos}`;
 }
 
-debugger
 const formato = (unidad) => unidad < 10 ? '0' + unidad : unidad;
 
 botonInicio.addEventListener('click',function() {
@@ -45,4 +42,14 @@ botonInicio.addEventListener('click',function() {
     botonInicio.classList.add('inicio');
     estado = 'pausa'
   }
+});
+
+botonReinicio.addEventListener('click',function(){
+  window.clearInterval(tiempoTranscurrido);
+  [horas,minutos,segundos] = [0,0,0];
+  cronometro.innerText = '00:00:00';
+  botonInicio.innerText = 'INICIAR';
+  botonInicio.classList.remove('pausa');
+  botonInicio.classList.add('inicio');
+  estado = 'pausa'
 });
